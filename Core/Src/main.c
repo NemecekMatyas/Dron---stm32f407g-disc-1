@@ -77,6 +77,8 @@ void MX_USB_HOST_Process(void);
  uint32_t frequency[4], duty_cycle[4];
  uint32_t capture_value[4];
 
+/* This is definitelly not the best way on how to achieve getting four different signals because Im wasting four TIMs where I can just use one instead.
+Problem is that this way it takes you like a week to understand what is going on. Of course I will try to make it only in one..*/
  void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim)
  {
      if (htim->Instance == TIM2)
